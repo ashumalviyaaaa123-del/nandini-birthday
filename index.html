@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#120812">
+<title>For Nandini ❤️</title>
+<style>
+:root{--pink:#ff4f91;--rose:#ff8ab5;--cream:#fff4f8;--bg:#09050b}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:Georgia,"Times New Roman",serif;background:var(--bg);color:white}
+body{overflow-x:hidden}
+button{font:inherit}
+.screen{min-height:100svh;display:flex;align-items:center;justify-content:center;padding:28px 20px;position:relative;overflow:hidden}
+.hidden{display:none!important}
+.bg{position:fixed;inset:0;z-index:-2;background:radial-gradient(circle at 50% 15%,#3b1027 0,#160915 38%,#09050b 75%)}
+.glow{position:fixed;width:55vw;height:55vw;border-radius:50%;filter:blur(80px);opacity:.22;background:#ff3d88;z-index:-1;animation:float 7s ease-in-out infinite alternate}
+.glow.g2{right:-25vw;bottom:-20vw;background:#9c2cff;animation-delay:-3s}
+@keyframes float{to{transform:translate(30px,-25px) scale(1.08)}}
+.scan-card{width:min(420px,100%);text-align:center}
+.eyebrow{letter-spacing:4px;text-transform:uppercase;font-size:11px;color:#ffb6d0;margin-bottom:14px}
+h1{font-size:clamp(34px,11vw,60px);line-height:1.02;margin:0 0 14px}
+.subtitle{font-size:16px;line-height:1.6;color:#f5dce6;margin:0 auto 28px;max-width:340px}
+.scanner{position:relative;width:min(290px,78vw);aspect-ratio:1;margin:0 auto 25px;border:1px solid rgba(255,255,255,.18);border-radius:28px;background:rgba(255,255,255,.035);backdrop-filter:blur(10px);display:grid;place-items:center;overflow:hidden;box-shadow:0 0 50px rgba(255,79,145,.12)}
+.scanner:before,.scanner:after{content:"";position:absolute;width:42px;height:42px;border:3px solid var(--rose)}
+.scanner:before{left:28px;top:28px;border-right:0;border-bottom:0;border-radius:12px 0 0 0}
+.scanner:after{right:28px;bottom:28px;border-left:0;border-top:0;border-radius:0 0 12px 0}
+#video{width:78%;height:78%;object-fit:cover;border-radius:18px;display:none}
+#canvas{display:none}
+.qr-placeholder{width:150px;height:150px;display:grid;place-items:center;position:relative}
+.qr-placeholder .box{width:45px;height:45px;border:7px solid #fff;position:absolute}
+.qr-placeholder .a{left:0;top:0}.qr-placeholder .b{right:0;top:0}.qr-placeholder .c{left:0;bottom:0}
+.qr-placeholder:after{content:"";width:45px;height:45px;background:repeating-linear-gradient(90deg,#fff 0 7px,transparent 7px 13px),repeating-linear-gradient(0deg,#fff 0 7px,transparent 7px 13px);opacity:.9}
+.scan-line{position:absolute;left:12%;right:12%;height:2px;background:linear-gradient(90deg,transparent,var(--rose),#fff,var(--rose),transparent);box-shadow:0 0 18px var(--pink);animation:scan 2.2s linear infinite}
+@keyframes scan{0%{top:16%}50%{top:82%}100%{top:16%}}
+.btn{border:0;border-radius:999px;padding:15px 24px;background:linear-gradient(135deg,#ff4f91,#ff7bb0);color:white;font-weight:bold;box-shadow:0 12px 35px rgba(255,79,145,.28);cursor:pointer}
+.secondary{background:rgba(255,255,255,.08);box-shadow:none;border:1px solid rgba(255,255,255,.14);margin-top:12px;font-size:13px}
+#message{font-size:13px;color:#eecbd8;min-height:20px;margin-top:10px}
+.countdown-wrap{width:min(720px,100%);text-align:center}
+.date{color:#ffabc7;letter-spacing:3px;text-transform:uppercase;font-size:12px}
+.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:28px 0 30px}
+.time{padding:18px 7px;border-radius:18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);box-shadow:inset 0 0 30px rgba(255,79,145,.03)}
+.time b{display:block;font-size:clamp(26px,8vw,45px)}
+.time span{font-size:10px;color:#d9b7c5;letter-spacing:1px;text-transform:uppercase}
+.reveal{max-width:680px;text-align:center}
+.reveal h2{font-size:clamp(30px,8vw,52px);margin:0 0 20px}
+.story{font-size:clamp(17px,4.8vw,22px);line-height:1.8;color:#f8dfe8}
+.story p{margin:0 0 20px}
+.em{color:#ff9fc0}
+.letter{margin-top:34px;padding:26px 22px;border-radius:24px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.1);text-align:left;line-height:1.8;color:#f9e7ee}
+.signature{text-align:right;color:#ffabc7;font-style:italic;margin-top:18px}
+.heart{position:fixed;bottom:-30px;font-size:18px;opacity:.7;animation:rise linear forwards;pointer-events:none}
+@keyframes rise{to{transform:translateY(-115vh) translateX(var(--x)) rotate(25deg);opacity:0}}
+.fade{animation:fade .9s ease both}
+@keyframes fade{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@media(max-width:430px){.countdown{gap:6px}.time{padding:14px 4px}.scanner{width:280px}}
+</style>
+</head>
+<body>
+<div class="bg"></div><div class="glow"></div><div class="glow g2"></div>
+
+<section id="scannerScreen" class="screen">
+  <div class="scan-card fade">
+    <div class="eyebrow">A little secret from Dev</div>
+    <h1>For Nandini ❤️</h1>
+    <p class="subtitle">Something special is waiting for you.<br>Scan the code to unlock it.</p>
+    <div class="scanner">
+      <video id="video" playsinline></video>
+      <canvas id="canvas"></canvas>
+      <div id="qrPlaceholder" class="qr-placeholder">
+        <i class="box a"></i><i class="box b"></i><i class="box c"></i>
+      </div>
+      <div class="scan-line"></div>
+    </div>
+    <button id="startScan" class="btn">📷 Start Scanner</button>
+    <button id="unlock" class="btn secondary">I can't scan — unlock ❤️</button>
+    <div id="message"></div>
+  </div>
+</section>
+
+<section id="countdownScreen" class="screen hidden">
+  <div class="countdown-wrap fade">
+    <div class="eyebrow">The countdown is for you</div>
+    <h1>Happy Birthday,<br><span class="em">Nandini</span> 🎂</h1>
+    <div class="date">31 October 2026</div>
+    <div id="countdown" class="countdown">
+      <div class="time"><b id="days">00</b><span>Days</span></div>
+      <div class="time"><b id="hours">00</b><span>Hours</span></div>
+      <div class="time"><b id="mins">00</b><span>Minutes</span></div>
+      <div class="time"><b id="secs">00</b><span>Seconds</span></div>
+    </div>
+    <p class="subtitle">Every second gets me closer to celebrating the person who means so much to me.</p>
+    <button id="openLetter" class="btn">Open what I made for you 💌</button>
+  </div>
+</section>
+
+<section id="letterScreen" class="screen hidden">
+  <div class="reveal fade">
+    <div class="eyebrow">Just between us</div>
+    <h2>Some things are hard to say…</h2>
+    <div class="story">
+      <p>It started with <span class="em">Instagram</span>… but somehow, you became so much more than someone I met online.</p>
+      <p>The first time we met, it was only for <span class="em">five minutes</span>. Just five minutes — yet somehow, those five minutes became the beginning of something I never expected.</p>
+      <p>Then came the second time, near your home… and that night, you hugged me for the first time. <span class="em">In the middle of the night.</span> I still remember how that moment felt.</p>
+      <p>I love the way you <span class="em">tease me</span>. Somehow you can annoy me and make me smile at the same time.</p>
+      <p>But more than anything, I love the way you <span class="em">understand my silence</span>. Sometimes I don't have to explain what I'm feeling. You just know.</p>
+    </div>
+    <div class="letter">
+      <strong>Happy Birthday, Nandini. ❤️</strong><br><br>
+      I don't know exactly where this journey will take us, but I know I'm grateful that it brought me to you.
+      Thank you for every smile, every tease, every quiet moment, and every little thing that makes you you.
+      <br><br>
+      I hope this birthday brings you all the happiness you deserve — and I hope I get to be there for many more of them.
+      <div class="signature">— Dev ❤️</div>
+    </div>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js"></script>
+<script>
+const scannerScreen=document.getElementById('scannerScreen');
+const countdownScreen=document.getElementById('countdownScreen');
+const letterScreen=document.getElementById('letterScreen');
+const video=document.getElementById('video');
+const canvas=document.getElementById('canvas');
+const ctx=canvas.getContext('2d',{willReadFrequently:true});
+const placeholder=document.getElementById('qrPlaceholder');
+const msg=document.getElementById('message');
+let stream=null, scanning=false;
+
+function hearts(n=18){
+  for(let i=0;i<n;i++){
+    const h=document.createElement('div'); h.className='heart'; h.textContent=['❤','♡','💗','✨'][Math.floor(Math.random()*4)];
+    h.style.left=Math.random()*100+'vw'; h.style.setProperty('--x',(Math.random()*180-90)+'px');
+    h.style.animationDuration=(4+Math.random()*5)+'s'; h.style.animationDelay=(Math.random()*1.5)+'s';
+    document.body.appendChild(h); setTimeout(()=>h.remove(),10000);
+  }
+}
+function unlockSite(){
+  if(stream){stream.getTracks().forEach(t=>t.stop());stream=null}
+  scanning=false;
+  scannerScreen.classList.add('hidden');
+  countdownScreen.classList.remove('hidden');
+  hearts(25);
+}
+document.getElementById('unlock').onclick=unlockSite;
+document.getElementById('startScan').onclick=async()=>{
+  if(!navigator.mediaDevices?.getUserMedia){msg.textContent='Camera access is not available here. Use the unlock button below.';return}
+  try{
+    stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:'environment'}},audio:false});
+    video.srcObject=stream; await video.play(); video.style.display='block'; placeholder.style.display='none';
+    document.getElementById('startScan').textContent='Scanning…'; scanning=true; scanLoop();
+  }catch(e){msg.textContent='Camera permission was blocked. You can still unlock the surprise below ❤️';}
+};
+function scanLoop(){
+  if(!scanning)return;
+  if(video.readyState===video.HAVE_ENOUGH_DATA){
+    canvas.width=video.videoWidth; canvas.height=video.videoHeight;
+    ctx.drawImage(video,0,0,canvas.width,canvas.height);
+    const image=ctx.getImageData(0,0,canvas.width,canvas.height);
+    const code=window.jsQR?jsQR(image.data,image.width,image.height,{inversionAttempts:'dontInvert'}):null;
+    if(code){msg.textContent='QR detected! Unlocking…';unlockSite();return}
+  }
+  requestAnimationFrame(scanLoop);
+}
+const target=new Date('2026-10-31T00:00:00+05:30').getTime();
+function updateCountdown(){
+  let diff=Math.max(0,target-Date.now());
+  const d=Math.floor(diff/86400000); diff%=86400000;
+  const h=Math.floor(diff/3600000); diff%=3600000;
+  const m=Math.floor(diff/60000); diff%=60000;
+  const s=Math.floor(diff/1000);
+  document.getElementById('days').textContent=String(d).padStart(2,'0');
+  document.getElementById('hours').textContent=String(h).padStart(2,'0');
+  document.getElementById('mins').textContent=String(m).padStart(2,'0');
+  document.getElementById('secs').textContent=String(s).padStart(2,'0');
+}
+updateCountdown(); setInterval(updateCountdown,1000);
+document.getElementById('openLetter').onclick=()=>{
+  countdownScreen.classList.add('hidden'); letterScreen.classList.remove('hidden'); hearts(35);
+};
+</script>
+</body>
+</html>
